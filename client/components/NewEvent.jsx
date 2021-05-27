@@ -81,10 +81,7 @@ function NewEvent(props) {
             </label>
             <input type='submit' value='Submit' />
           </form>
-          <Link to='/day-view'>
-              {/* sends to day view */}
-              <button>Back</button>
-          </Link>
+            <button>Back</button>
         </Route>
         <Route exact path='/day-view' component={DayView} />
       </Switch>

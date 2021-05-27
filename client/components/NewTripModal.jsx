@@ -27,8 +27,9 @@ function NewTripModal(props) {
 	// define event handler for on click of submit to send post request to the server
 	// useEffect(() => {
 		const handleSubmit = (e) => {
-      e.preventDefault();
-			console.log('this is props', props)
+      // e.preventDefault();
+			console.log('this is props',props)
+      
 			props.closeNewTrip();
 			console.log(formData);
 			fetch(`/api/new-trip`, {
@@ -42,10 +43,10 @@ function NewTripModal(props) {
 			})
 				.then((response) => response.json())
 				.then((data) => console.log(data))
-				.then(() => {
-					console.log('submitted trip')
-					window.location = "http://localhost:8080";
-				})
+				// .then(() => {
+				// 	console.log('submitted trip')
+				// 	window.location = "http://localhost:8080";
+				// })
 				.catch((err) => console.log("the error is client side"));
 		};
 	// });
@@ -53,15 +54,30 @@ function NewTripModal(props) {
 
 	return (
 		<form onSubmit={handleSubmit}>
-			<TextField id="name" name="name" label="Give your trip a name" variant="outlined" onChange={handleChange} />
+			<label>
+				Enter Trip Name: 
+				<TextField id="name" name="name" label="Give your trip a name" variant="outlined" onChange={handleChange} />
+			</label>
 			<br></br>
-			<TextField id="start_date" name="start_date" label="Start Date" variant="outlined" onChange={handleChange} />
+			<label>
+				Start Date: 
+				<TextField id="start_date" name="start_date" type="date" variant="outlined" onChange={handleChange} />
+			</label>
 			<br></br>
-			<TextField id="end_date" name="end_date" label="End Date" variant="outlined" onChange={handleChange} />
+			<label>
+				End Date: 
+				<TextField id="end_date" name="end_date" type="date" variant="outlined" onChange={handleChange} />
+			</label>
 			<br></br>
-			<TextField id="people" name="people" label="Who did you go with?" variant="outlined" onChange={handleChange} />
+			<label>
+				People On Trip:
+				<TextField id="people" name="people" label="Who did you go with?" variant="outlined" onChange={handleChange} />
+			</label>
 			<br></br>
-			<TextField id="location" name="location" label="City" variant="outlined" onChange={handleChange} />
+			<label>
+				Enter Location of Trip: 
+				<TextField id="location" name="location" label="City" variant="outlined" onChange={handleChange} />
+			</label>
 			<br></br>
 			<input type="submit" value="Submit" />
 		</form>
