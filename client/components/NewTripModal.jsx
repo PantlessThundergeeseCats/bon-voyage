@@ -28,7 +28,7 @@ function NewTripModal(props) {
 	// useEffect(() => {
 		const handleSubmit = (e) => {
       e.preventDefault();
-			console.log('this is props',props)
+			console.log('this is props', props)
 			props.closeNewTrip();
 			console.log(formData);
 			fetch(`/api/new-trip`, {
