@@ -27,6 +27,7 @@ tripController.addTrip = (req, res, next) => {
 
 	db.query(tripQuery, input)
 		.then((data) => {
+			console.log(data, 'data')
 			console.log("made it to dbQuery");
 			next();
 		})
