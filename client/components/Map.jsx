@@ -47,6 +47,7 @@ function Map() {
   
   function closePinModal() {
     setPinIsOpen(false);
+   
   }
   
   const [pinModalIsOpen, setPinIsOpen] = useState(false);

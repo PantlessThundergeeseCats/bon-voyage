@@ -50,16 +50,18 @@ function App() {
   const components = [
     <Router>
       <div className="app">
-        <Link to='/new-trip'>
-          <Button variant="contained" color="primary" onClick={openNewTripModal}>
-            Add Trip
-          </Button>
-        </Link>
+        <Button variant="contained" color="primary" onClick={openNewTripModal}>
+          Add Trip
+        </Button>
         <Map tripData={tripData}/>
         <Modal
           isOpen={newTripModalIsOpen}
           onRequestClose={closeNewTripModal}
           contentLabel='Modal to add new trip'
+          style={{overlay:{
+            backgroundColor: 'rgba(0,0,0,0.75)'
+          }
+        }}
           >
             <NewTripModal closeNewTrip={closeNewTripModal}/>
           </Modal>
